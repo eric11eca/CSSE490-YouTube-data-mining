@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <title>CSSE490 Data Analysis Trending YouTube Videos</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/radial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+
+    <!--div class="container">
+        <div class="header">
+           
+                <div class="container"><a class="navbar-brand logo" href="#" style="color: white; font-size: 20px;">Data Analysis: Trending YouTube Videos</a>
+                    
+                </div>
+        </div>
+        <div class="item content-1">
+            <img src="./assets/Data Mining.jpg" style="width: 390px; height: 340px;">
+        </div>
+        <div class="item content-2"></div>
+        <div class="item content-3">
+            <img src="./assets/Data Processing.jpg" style="width: 390px; height: 340px;">
+        </div>
+    </div-->
+
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container"><a class="navbar-brand logo" href="#">Data Analysis: Trending YouTube Videos</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto"></ul>
+        </div>
+        </div>
+    </nav>
+    
+    <img src="./assets/Data Mining.jpg" style="width: 390px; height: 340px; top: 30%; left: 10%; position: absolute;">
+    <img src="./assets/Data Processing.jpg" style="width: 390px; height: 340px; top: 30%; right: 10%; position: absolute;">
+
+
+    <div class="menu">
+        <div class="btn trigger">
+            <span class="line white"></span>
+        </div>
+
+        <div class="icons">
+            <div class="rotater">
+                <div id="home" class="btn btn-icon">
+                    <i class="glyphicon glyphicon-home white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+             </div>
+
+            <div class="rotater">
+                <div id="statistic" class="btn btn-icon">
+                    <i class="glyphicon glyphicon-equalizer white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+            </div>
+
+            <div class="rotater">
+                <div id="fire" class="btn btn-icon">
+                    <i class="glyphicon glyphicon-fire white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+            </div>
+
+            <div class="rotater">
+                <div id="category" class="btn btn-icon">
+                    <i class="glyphicon glyphicon-list white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+            </div>
+
+            <div class="rotater">
+                <div id="title" class="btn btn-icon">
+                    <i class="glyphicon glyphicon-tags white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+            </div>
+
+            <div class="rotater">
+                <div id="timeline" class="btn btn-icon">
+                    <i class="fas fa-calendar-alt white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+            </div>
+
+            <div class="rotater">
+                <div id="likes" class="btn btn-icon">
+                    <i class="fas fa-star white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+            </div>
+
+            <div class="rotater">
+                <div id="view" class="btn btn-icon">
+                    <i class="fas fa-eye white" white style="font-size:40px; text-align:center; line-height:130%;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $(".trigger").click(function() {
+                $(".menu").toggleClass("active"); 
+            });
+        });
+
+        $('#category').click(function() {
+            location.href = './category_related_words.html';
+        })
+
+        $('#home').click(function() {
+            location.href = './world_map.html';
+        })
+
+        $('#likes').click(function() {
+            location.href = './likes_vs_dislikes.html';
+        })
+    </script>
+
+    <footer class="page-footer"></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+</html>
