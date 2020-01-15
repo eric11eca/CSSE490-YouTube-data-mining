@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .active { fill: blue !important;}
+          /*.datamaps-key dt, .datamaps-key dd {float: none !important;}
+          .datamaps-key {right: -50px; top: 0;}*/
+    </style>
+</head>
+
+<body>
+
+    <div id="worldmap" style=" width: 800px; height: 500px; position: relative;"></div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script type="text/javascript" src="./js/datamaps.world.min.js"></script>
+    <script>
+        const country_list = ["United States", "United kindoms", "India","Canada", "France"]
+        link = ""
+
+        var datamap = new Datamap({
+            element: document.getElementById('worldmap'),
+            projection: 'mercator',
+            fills: {
+                defaultFill: "#ABDDA4",
+                authorHasTraveledTo: "#fa0fa0"
+            },
+            data: {
+                USA: { fillKey: "authorHasTraveledTo" },
+            },
+            done: function(map) {
+                map.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+                    country = geography.properties.name;
+                    if (country_list.includes(country)) {
+                        location.href = "https://d3js.org";
+                    } else {
+                        return;
+                    }
+                })
+            }
+        });
+
+        var colors = d3.scale.category10();
+
+        window.setInterval(function() {
+            datamap.updateChoropleth({
+                USA: colors(Math.random() * 10),
+                GBR: colors(Math.random() * 50),
+                CAN: colors(Math.random() * 100),
+                FRA: colors(Math.random() * 50),
+                IND: colors(Math.random() * 100),
+            });
+        }, 2000);
+
+    </script>
+</body>
+</html>
