@@ -8,40 +8,41 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/radial.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Cookie' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <style>
+        body {
+            margin:0;
+	        padding:0;
+            background-color: rgb(243, 231, 231);
+        }
+    </style>
 </head>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <body>
+    <header class="header-basic-light">
+        <div class="header-limiter">
+            <h1>
+                <a href="index.html">Trending YouTube Video Data Mining  
+                    <img src="./assets/Data.svg" width="40" height="40" style="text-align: center;">
+                </a>
+            </h1>
+            <!--nav>
+                <a href="#">Home</a>
+                <a href="#" class="selected">Blog</a>
+                <a href="#">Pricing</a>
+                <a href="#">About</a>
+                <a href="#">Faq</a>
+                <a href="#">Contact</a>
+            </nav-->
+        </div>
+    </header>
 
-    <!--div class="container">
-        <div class="header">
-           
-                <div class="container"><a class="navbar-brand logo" href="#" style="color: white; font-size: 20px;">Data Analysis: Trending YouTube Videos</a>
-                    
-                </div>
-        </div>
-        <div class="item content-1">
-            <img src="./assets/Data Mining.jpg" style="width: 390px; height: 340px;">
-        </div>
-        <div class="item content-2"></div>
-        <div class="item content-3">
-            <img src="./assets/Data Processing.jpg" style="width: 390px; height: 340px;">
-        </div>
-    </div-->
-
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-        <div class="container"><a class="navbar-brand logo" href="#">Data Analysis: Trending YouTube Videos</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav navbar-nav ml-auto"></ul>
-        </div>
-        </div>
-    </nav>
-    
-    <img src="./assets/Data Mining.jpg" style="width: 390px; height: 340px; top: 30%; left: 10%; position: absolute;">
-    <img src="./assets/Data Processing.jpg" style="width: 390px; height: 340px; top: 30%; right: 10%; position: absolute;">
-
+    <img src="./assets/Data Mining.jpg" style="display: inline-block; width: 390px; height: 340px; left: 5%; top: 30%; position: absolute;">
+    <img src="./assets/Data Processing.jpg" style="display: inline-block; width: 390px; height: 340px;  right: 5%; top: 30%; position: absolute;">
 
     <div class="menu">
         <div class="btn trigger">
@@ -51,7 +52,7 @@
         <div class="icons">
             <div class="rotater">
                 <div id="home" class="btn btn-icon">
-                    <i class="glyphicon glyphicon-home white" style="font-size:40px; text-align:center; line-height:130%;"></i>
+                    <i class="glyphicon glyphicon-home white" title="home" style="font-size:40px; text-align:center; line-height:130%;"></i>
                 </div>
              </div>
 
@@ -115,7 +116,7 @@
         })
 
         $('#likes').click(function() {
-            location.href = './likes_vs_dislikes.html';
+            location.href = './likes_dislike.html';
         })
 
         $('#timeline').click(function() {
