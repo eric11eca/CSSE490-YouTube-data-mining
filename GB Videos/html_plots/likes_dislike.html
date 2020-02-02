@@ -29,6 +29,11 @@
         .hidden {
             display:none;
         }
+
+        .img {
+            width: 800px;
+            height: 600px;
+        }
     </style>
 </head>
 
@@ -42,14 +47,6 @@
                     <img src="./assets/Data.svg" width="40" height="40" style="text-align: center;">
                 </a>
             </h1>
-            <!--nav>
-                <a href="#">Home</a>
-                <a href="#" class="selected">Blog</a>
-                <a href="#">Pricing</a>
-                <a href="#">About</a>
-                <a href="#">Faq</a>
-                <a href="#">Contact</a>
-            </nav-->
         </div>
     </header>
 
@@ -57,12 +54,15 @@
 
         <div class="shadow", style="float: right; width: 850px; height: 650px; margin-right: 2em; margin-top: 4em; margin-bottom: 2em;">
 
-            <div id="2dcontour" style="height: 600px; width: 800px;">    
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+            <div id="late_bloomer" style="height: 600px; width: 800px;">    
+                <!--script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</!--script>
                 <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     
-                <div id="8205abc9-5443-4c51-81bd-311c313f935c" class="plotly-graph-div" style="height: 580px; width: 700px; text-align: center;"></div>
-                <script type="text/javascript" src="./js/mean_like_dislike_contour.js"></script>
+                <div id="ae851871-5d4f-4093-b507-39a5b05d06ce" class="plotly-graph-div" style="height:600px; width:800px;"></div>
+                <script type="text/javascript" src="./js/late_bloomer.js"></script-->
+                <image class="img" src="assets/figures/trending_stats_distribution.png">
+
+                </image>
             </div>
     
             <div id="bubble_chart" class="hidden" style="height: 600px; width: 800px;">
@@ -93,7 +93,7 @@
                 <script>
                     $('#nav-histogram-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#2dcontour').show();
+                        $('#late_bloomer').show();
                         $('#bubble_chart').hide();
                         $('#3dscatter').hide();
                         console.log("switch graph");
@@ -101,7 +101,7 @@
 
                     $('#nav-bubble-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#2dcontour').hide();
+                        $('#late_bloomer').hide();
                         $('#bubble_chart').show();
                         $('#3dscatter').hide();
                         console.log("switch graph");
@@ -109,7 +109,7 @@
 
                     $('#nav-3dscatter-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#2dcontour').hide();
+                        $('#late_bloomer').hide();
                         $('#bubble_chart').hide();
                         $('#3dscatter').show();
                         console.log("switch graph");
