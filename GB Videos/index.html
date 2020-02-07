@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .active {
+            fill: blue !important;
+        }
+    </style>
+    <title>CSSE490 Data Analysis Trending YouTube Videos</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+        <div class="container">
+            <a class="navbar-brand logo" href="#" style="font-size: large;">Data Analysis: Trending YouTube Videos</a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav">
+                <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto"></ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page projets-page"></main>
+
+
+    <div id="worldmap" style=" width: 800px; height: 500px; position: absolute; 
+            top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script type="text/javascript" src="./js/datamaps.world.min.js"></script>
+    <script>
+        const country_list = ["United States", "United kindoms", "India", "Canada", "France"]
+        link = ""
+
+        var datamap = new Datamap({
+            element: document.getElementById('worldmap'),
+            projection: 'mercator',
+            fills: {
+                defaultFill: "#ABDDA4",
+                authorHasTraveledTo: "#fa0fa0"
+            },
+            data: {
+                USA: {
+                    fillKey: "authorHasTraveledTo"
+                },
+            },
+            done: function(map) {
+                map.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+                    country = geography.properties.name;
+                    if (country_list.includes(country)) {
+                        location.href = "GBVideo.html";
+                    } else {
+                        return;
+                    }
+                })
+            }
+        });
+
+        var colors = d3.scale.category10();
+
+        window.setInterval(function() {
+            datamap.updateChoropleth({
+                USA: colors(Math.random() * 10),
+                GBR: colors(Math.random() * 50),
+                CAN: colors(Math.random() * 100),
+                FRA: colors(Math.random() * 50),
+                IND: colors(Math.random() * 100),
+            });
+        }, 2000);
+    </script>
+
+    <footer class="page-footer"></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

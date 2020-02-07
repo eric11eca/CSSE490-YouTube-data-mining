@@ -1,7 +1,7 @@
 var animation = anime.timeline({loop:false})
 
 animation.add({
-	targets: 'h1',
+	targets: '.title',
 	scale: [4,1],
 	opacity: [0,1],
 	translateZ: 0,

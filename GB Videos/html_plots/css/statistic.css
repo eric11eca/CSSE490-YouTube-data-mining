@@ -84,14 +84,14 @@
 	 background-color: #fff;
 	 color: #80d9fb;
 }
- /*.container .blog-item .blog-image {
+ .container .blog-item .blog-image {
 	 position: absolute;
 	 width: 50%;
 	 height: 100%;
 	 top: 0;
-	 right: 0;
+	 right: 1em;
 	 background-size: auto;
-	 background-position: center center;
+	 background-position: right center;
 	 background-repeat: no-repeat;
-}*/
+}
  
