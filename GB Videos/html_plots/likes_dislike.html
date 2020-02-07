@@ -1,0 +1,155 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/animate.css">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            background-color: #f4f4f4;
+        }
+        .shadow {
+            border-radius: 10px; background: white; 
+            padding: 20px; 
+            width: 40%; 
+            -moz-box-shadow:    3px 3px 5px 6px #ccc;
+            -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+            box-shadow:         3px 3px 5px 6px #ccc;
+            margin:5 auto;
+        }    
+        .tab-content{
+            padding:20px;
+        }
+        .hidden {
+            display:none;
+        }
+
+        .img {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<body>
+    <header class="header-basic-light">
+        <div class="header-limiter">
+            <h1>
+                <a href="index.html">Trending YouTube Video Data Mining  
+                    <img src="./assets/Data.svg" width="40" height="40" style="text-align: center;">
+                </a>
+            </h1>
+        </div>
+    </header>
+
+    <div style="display: block; overflow: hidden; width: 100%;">
+
+        <div class="shadow", style="float: right; width: 850px; height: 650px; margin-right: 2em; margin-top: 4em; margin-bottom: 2em;">
+
+            <div id="late_bloomer" style="height: 600px; width: 800px;">    
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+                <div id="ae851871-5d4f-4093-b507-39a5b05d06ce" class="plotly-graph-div" style="height:600px; width:800px;"></div>
+                <script type="text/javascript" src="./js/late_bloomer.js"></script>
+            </div>
+    
+            <div id="bubble_chart" class="hidden" style="height: 600px; width: 800px;">
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                
+             <div id="03d2ba32-7ce9-42db-82b7-210351a6fba6" class="plotly-graph-div" style="height:600px; width:800px; text-align: center;"></div>
+                <script type="text/javascript" src="js/3d_scatter_view.js"></script>
+            </div>
+
+            <div id="3dscatter" class="hidden" style="height: 600px; width: 800px;">    
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        
+                <div id="04e2e5a2-0ef2-4089-8e29-b668b176840b" class="plotly-graph-div" style="height:600px; width:800px; text-align: center;"></div>
+                <script type="text/javascript" src="./js/likes_dislikes.js"></script>
+            </div>
+
+        </div>
+
+        <div class="shadow" style="float: left; width: 30%; height: 650px; margin-left:3em; margin-top: 4em; margin-bottom: 2em;">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav-histogram-tab" data-toggle="tab" href="#nav-histogram" role="tab" aria-controls="nav-histogram" aria-selected="true">Histogram</a>
+                  <a class="nav-item nav-link" id="nav-bubble-tab" data-toggle="tab" href="#nav-bubble" role="tab" aria-controls="nav-bubble" aria-selected="false">Bubble-Chart</a>
+                  <a class="nav-item nav-link" id="nav-3dscatter-tab" data-toggle="tab" href="#nav-3dscatter" role="tab" aria-controls="nav-3dscatter" aria-selected="false">3DScatter</a>
+                </div>
+                <script>
+                    $('#nav-histogram-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#late_bloomer').show();
+                        $('#bubble_chart').hide();
+                        $('#3dscatter').hide();
+                        console.log("switch graph");
+                    });
+
+                    $('#nav-bubble-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#late_bloomer').hide();
+                        $('#bubble_chart').show();
+                        $('#3dscatter').hide();
+                        console.log("switch graph");
+                    });
+
+                    $('#nav-3dscatter-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#late_bloomer').hide();
+                        $('#bubble_chart').hide();
+                        $('#3dscatter').show();
+                        console.log("switch graph");
+                    });
+                </script>
+            </nav>
+            
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane text_wrap fade show active" id="nav-histogram" role="tabpanel" aria-labelledby="nav-histogram-tab">
+                    <!--p class="ex1">Histogram</!--p-->
+                    <h1 class="ml2" id="title1">2D Contour  Histogram</h1> 
+                    <p class="ml2" id="content1">The 2D contour histogram shows the relationship between each categories likes and dislikes</p>
+                </div>
+                
+                <div class="tab-pane fade" id="nav-bubble" role="tabpanel" aria-labelledby="nav-bubble-tab">
+                    <h1 class="ml2" id="title2">3DScatter</h1>
+                    <p class="ml2" id="content2">The 3DScatter shows a 3-dimenssional</p>
+                </div>
+
+                <div class="tab-pane fade" id="nav-3dscatter" role="tabpanel" aria-labelledby="nav-3dscatter-tab">
+                    <h1 class="ml2" id="title3">Bubble Chart</h1>
+                    <p class="ml2" id="content3">Bubble Chart shows that</p>
+                </div>
+                <script>
+                    var title1 = document.querySelector('#title1');
+                    title1.innerHTML = title1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    var title2 = document.querySelector('#title2');
+                    title2.innerHTML = title2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                    
+                    var title3 = document.querySelector('#title3');
+                    title3.innerHTML = title3.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="js/animate.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    
+</body>
+</html>
