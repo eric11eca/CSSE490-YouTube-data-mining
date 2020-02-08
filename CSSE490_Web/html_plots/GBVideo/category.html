@@ -1,0 +1,161 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/animate.css">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            background-color: #f4f4f4;
+        }
+        .shadow {
+            border-radius: 10px; background: white; 
+            padding: 20px; 
+            width: 40%; 
+            -moz-box-shadow:    3px 3px 5px 6px #ccc;
+            -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+            box-shadow:         3px 3px 5px 6px #ccc;
+            margin:5 auto;
+        }    
+        .tab-content{
+            padding:20px;
+        }
+        .hidden {
+            display:none;
+        }
+
+        .img {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<body>
+    <header class="header-basic-light">
+        <div class="header-limiter">
+            <h1>
+                <a href="./GBVideo.html">Trending YouTube Video Data Mining: Group By Category  
+                    <img src="../assets/Data.svg" width="40" height="40" style="text-align: center;">
+                </a>
+            </h1>
+        </div>
+    </header>
+
+    <div style="display: block; overflow: hidden; width: 100%;">
+
+        <div class="shadow", style="float: right; width: 850px; height: 650px; margin-right: 3em; margin-top: 4em; margin-bottom: 2em;">
+
+            <div id="category_count" style="height: 600px; width: 800px; margin-top: 3rem; margin-left: 0.5em;">    
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+                <div id="38574845-647c-4852-b879-4620a74c2f87" class="plotly-graph-div" style="height:600px; width:800px;"></div>
+                <script type="text/javascript" src="../js/category_count.js"></script>
+            </div>
+
+            <div id="category_desc" class="hidden">
+                <image style="width: 820px; height: 600px;" src="../assets/figures/category_desc.png"></image>
+            </div>
+
+            <div id="category_cluster" class="hidden" style="height: 600px; width: 800px;">    
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+                <div id="0c1fb625-0a54-4492-8975-a7f322d40569" class="plotly-graph-div" style="height:800px; width:800px;"></div>
+                <script type="text/javascript" src="../js/category_cluster.js"></script>
+            </div>
+
+        </div>
+
+        <div class="shadow" style="float: left; width: 30%; height: 650px; margin-left: 4rem; margin-top: 4em; margin-bottom: 2em;">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav1-tab" data-toggle="tab" href="#nav1" 
+                   role="tab" aria-controls="nav1" aria-selected="true">Video Counts</a>
+                  <a class="nav-item nav-link" id="nav2-tab" data-toggle="tab" href="#nav2" 
+                   role="tab" aria-controls="nav2" aria-selected="false">Features</a>
+                  <a class="nav-item nav-link" id="nav3-tab" data-toggle="tab" href="#nav3" 
+                   role="tab" aria-controls="nav3" aria-selected="false">Dendrogram</a>
+                </div>
+                <script>
+                    $('#nav1-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#category_count').show();
+                        $('#category_desc').hide();
+                        $('#category_cluster').hide();
+                        console.log("switch graph");
+                    });
+
+                    $('#nav2-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#category_count').hide();
+                        $('#category_desc').show();
+                        $('#category_cluster').hide();
+                        console.log("switch graph");
+                    });
+
+                    $('#nav3-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#category_count').hide();
+                        $('#category_desc').hide();
+                        $('#category_cluster').show();
+                        console.log("switch graph");
+                    });
+                </script>
+            </nav>
+            
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane text_wrap fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
+                    <h1 class="ml2 title" id="title1">Number of Videos Per Category</h1> 
+                    <p class="ml2" id="content1">
+                        The bar chart on the left displays the number of videos in each category. 
+                        As the chart show, the two categories containing the most videos are Music and Entertainment.
+                        This result implies that music videos and entertainment videos are very popular in the Great Britain area.
+                        Besides music and entertainment videos, three other categories also had a fair amount of trending videos. 
+                        They are the category of people and blogs, sports, and comedy. British people enjoy learning about other people, 
+                        watching sports, and having laughter during comedies. In the chart, vehicles and travel videos have very low popularity,
+                        which shows that British people think vehicle videos and travel videos are not very fun.
+                    </p>
+                </div>
+                
+                <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
+                    <h1 class="ml2 title" id="title2">Numerical Attributes By Categories</h1>
+                    <p class="ml2" id="content2">The category_cluster shows a 3-dimenssional</p>
+                </div>
+
+                <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
+                    <h1 class="ml2 title" id="title3">Dendrogram</h1>
+                    <p class="ml2" id="content3">Dendrogram</p>
+                </div>
+                <script>
+                    var title1 = document.querySelector('#title1');
+                    title1.innerHTML = title1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    var title2 = document.querySelector('#title2');
+                    title2.innerHTML = title2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                    
+                    var title3 = document.querySelector('#title3');
+                    title3.innerHTML = title3.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="../js/animate.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    
+</body>
+</html>
