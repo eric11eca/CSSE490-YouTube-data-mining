@@ -1,0 +1,25 @@
+[debug] [2020-02-14T03:41:33.779Z] ----------------------------------------------------------------------
+[debug] [2020-02-14T03:41:33.781Z] Command:       D:\VS_CODE\Node\node.exe C:\Users\Yiyuan Wang\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-02-14T03:41:33.781Z] CLI Version:   7.6.2
+[debug] [2020-02-14T03:41:33.781Z] Platform:      win32
+[debug] [2020-02-14T03:41:33.781Z] Node Version:  v13.0.1
+[debug] [2020-02-14T03:41:33.782Z] Time:          Thu Feb 13 2020 22:41:33 GMT-0500 (Eastern Standard Time)
+[debug] [2020-02-14T03:41:33.782Z] ----------------------------------------------------------------------
+[debug] [2020-02-14T03:41:33.782Z] 
+[debug] [2020-02-14T03:41:33.787Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-14T03:41:33.787Z] > authorizing via signed-in user
+[debug] [2020-02-14T03:41:33.787Z] [iam] checking project csse490-videos for permissions ["firebase.projects.get"]
+[debug] [2020-02-14T03:41:33.788Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/csse490-videos:testIamPermissions  
+
+[debug] [2020-02-14T03:41:34.040Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-14T03:41:34.042Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/csse490-videos  
+ 
+[debug] [2020-02-14T03:41:34.277Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'D:\VS_CODE\CSSE490-YouTube-data-mining\CSSE490_Web'...
+[info] 
+[debug] [2020-02-14T03:41:34.280Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/csse490-videos/webApps/-/config  
+ 
+[debug] [2020-02-14T03:41:34.704Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: html_plots
+[info] +  hosting: Local server: http://localhost:5000
