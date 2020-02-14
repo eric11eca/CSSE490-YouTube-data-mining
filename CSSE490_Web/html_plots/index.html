@@ -33,7 +33,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script type="text/javascript" src="./js/datamaps.world.min.js"></script>
     <script>
-        const country_list = ["United States", "United kindoms", "India","Canada", "France"]
+        const country_list = ["United States", "United Kingdom", "India","Canada", "France"]
         link = ""
 
         var datamap = new Datamap({
@@ -50,7 +50,10 @@
                 map.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
                     country = geography.properties.name;
                     if (country_list.includes(country)) {
-                        location.href = "./GBVideo/GBVideo.html";
+                        console.log(country);
+                        if (country ==  "United Kingdom") location.href = "./GBVideo/GBVideo.html";
+                        else if (country ==  "India") location.href = "./GBVideo/INVideo.html";
+                        else (console.log("unimplememted"));
                     } else {
                         return;
                     }
