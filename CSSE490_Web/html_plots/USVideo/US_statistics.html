@@ -43,7 +43,7 @@
     <header class="header-basic-light">
         <div class="header-limiter">
             <h1>
-                <a href="./USVideo.html">Trending YouTube Video Data Mining: Likes vs. Dislikes  
+                <a href="./USVideo.html">Trending YouTube Video Data Mining: Basic Statistics  
                     <img src="../assets/Data.svg" width="40" height="40" style="text-align: center;">
                 </a>
             </h1>
@@ -54,24 +54,18 @@
 
         <div class="shadow", style="float: right; width: 950px; height: 650px; margin-right: 2em; margin-top: 4em; margin-bottom: 2em;">
 
-            <div id="fam_dislike" style="height: 600px; width: 800px;">    
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    
-                <div id="53e660d7-c899-43fb-ac83-0effd5bb5230" class="plotly-graph-div" style="height:600px; width:800px;"></div>
-                <script type="text/javascript" src="../js/US_famous_by_dislikes.js"></script>
+            <div id="log" style="height: 600px; width: 800px;">    
+                <image style="height: 600px; width: 900px; margin-top: 2em;" src="../assets/figures/US_log_distribution.PNG"></image>
+            </div>
+            <!-- </div> -->
+
+            <div id="view" class="hidden" style="height: 600px; width: 800px;">
+                <image style="height: 600px; width: 900px; margin-top: 2em;" src="../assets/figures/US_view_likes_dislikes_comments_corr.PNG"></image>
             </div>
 
-            <div id="tree" class="hidden" style="height: 600px; width: 800px;">
-                <image style="height: 300px; width: 900px; margin-top: 7em;" src="../assets/figures/US_Trending_Video_Prediction.PNG"></image>
-            </div>
-
-            <div id="channels" class="hidden" style="height: 600px; width: 800px;">    
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        
-                <div id="1800bb8b-e267-4c01-bf0c-eef3b2fb16b9" class="plotly-graph-div" style="height:600px; width:800px; text-align: center;"></div>
-                <script type="text/javascript" src="../js/US_likes_by_channel.js"></script>
+            <div id="matrix" class="hidden" style="height: 600px; width: 800px;">    
+                <image style="height: 600px; width: 900px; margin-top: 2em;" src="../assets/figures/US_views_according_likes_dislikes.PNG"></image>
+            <!-- </div> -->
             </div>
 
         </div>
@@ -80,34 +74,34 @@
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <a class="nav-item nav-link active" id="nav1-tab" data-toggle="tab" href="#nav1" 
-                   role="tab" aria-controls="nav1" aria-selected="true">Famous By Dislikes</a>
+                   role="tab" aria-controls="nav1" aria-selected="true">Log Distribution</a>
                   <a class="nav-item nav-link" id="nav2-tab" data-toggle="tab" href="#nav2" 
-                   role="tab" aria-controls="nav2" aria-selected="false">Decision Tree</a>
+                   role="tab" aria-controls="nav2" aria-selected="false">Views & (Dis)Likes</a>
                   <a class="nav-item nav-link" id="nav3-tab" data-toggle="tab" href="#nav3" 
-                   role="tab" aria-controls="nav3" aria-selected="false">Likes by Channels</a>
+                   role="tab" aria-controls="nav3" aria-selected="false">Correlation Matrix</a>
                 </div>
                 <script>
                     $('#nav1-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#fam_dislike').show();
-                        $('#tree').hide();
-                        $('#channels').hide();
+                        $('#log').show();
+                        $('#view').hide();
+                        $('#matrix').hide();
                         console.log("switch graph");
                     });
 
                     $('#nav2-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#fam_dislike').hide();
-                        $('#tree').show();
-                        $('#channels').hide();
+                        $('#log').hide();
+                        $('#view').show();
+                        $('#matrix').hide();
                         console.log("switch graph");
                     });
 
                     $('#nav3-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#fam_dislike').hide();
-                        $('#tree').hide();
-                        $('#channels').show();
+                        $('#log').hide();
+                        $('#view').hide();
+                        $('#matrix').show();
                         console.log("switch graph");
                     });
                 </script>
