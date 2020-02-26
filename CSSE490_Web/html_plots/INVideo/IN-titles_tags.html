@@ -1,0 +1,161 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/animate.css">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    
+    <style>
+        body {
+            margin:0;
+            padding:0;
+            background-color: #f4f4f4;
+        }
+        .shadow {
+            border-radius: 10px; background: white; 
+            padding: 20px; 
+            width: 40%; 
+            -moz-box-shadow:    3px 3px 5px 6px #ccc;
+            -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+            box-shadow:         3px 3px 5px 6px #ccc;
+            margin:5 auto;
+        }    
+        .tab-content{
+            padding:20px;
+        }
+        .hidden {
+            display:none;
+        }
+
+        .img {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<body>
+    <header class="header-basic-light">
+        <div class="header-limiter">
+            <h1>
+                <a href="./USVideo.html">Trending YouTube Video Data Mining: Title & Tags  
+                    <img src="../assets/Data.svg" width="40" height="40" style="text-align: center;">
+                </a>
+            </h1>
+        </div>
+    </header>
+
+    <div style="display: block; overflow: hidden; width: 100%;">
+
+        <div class="shadow", style="float: right; width: 970px; height: 650px; margin-right: 2em; margin-top: 4em; margin-bottom: 2em;">
+
+            <!-- <div id="fam_dislike" style="height: 600px; width: 800px;">    
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+                <div id="53e660d7-c899-43fb-ac83-0effd5bb5230" class="plotly-graph-div" style="height:600px; width:800px;"></div>
+                <script type="text/javascript" src="../js/US_famous_by_dislikes.js"></script>
+            </div> -->
+
+            <div id="Tags"  style="height: 600px; width: 960px;">
+                <image style="height: 600px; width: 900px; margin-top: 1em;" src="../assets/figures/IN-tagcloud.PNG"></image>
+            </div>
+
+            <div id="Titles" class="hidden" style="height: 500px; width: 960px;">
+                <image style="height: 600px; width: 900px; margin-top: 1em;" src="../assets/figures/IN-titlecloud.PNG"></image>
+            </div>
+
+            <!-- <div id="channels" class="hidden" style="height: 600px; width: 800px;">    
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        
+                <div id="1800bb8b-e267-4c01-bf0c-eef3b2fb16b9" class="plotly-graph-div" style="height:600px; width:800px; text-align: center;"></div>
+                <script type="text/javascript" src="../js/US_likes_by_channel.js"></script>
+            </div> -->
+
+        </div>
+
+        <div class="shadow" style="float: left; width: 30%; height: 650px; margin-left:3em; margin-top: 4em; margin-bottom: 2em;">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a class="nav-item nav-link active" id="nav1-tab" data-toggle="tab" href="#nav1" 
+                   role="tab" aria-controls="nav1" aria-selected="true">Tag Wordcloud</a>
+                  <a class="nav-item nav-link" id="nav2-tab" data-toggle="tab" href="#nav2" 
+                   role="tab" aria-controls="nav2" aria-selected="false">Title Wordcloud</a>
+                  <!-- <a class="nav-item nav-link" id="nav3-tab" data-toggle="tab" href="#nav3" 
+                   role="tab" aria-controls="nav3" aria-selected="false">Likes by Channels</a> -->
+                </div>
+                <script>
+                    $('#nav1-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#Tags').show();
+                        $('#Titles').hide();
+                        // $('#channels').hide();
+                        console.log("switch graph");
+                    });
+
+                    $('#nav2-tab').on('click', function (e) {
+                        e.preventDefault()
+                        $('#Tags').hide();
+                        $('#Titles').show();
+                        // $('#channels').hide();
+                        console.log("switch graph");
+                    });
+
+                    // $('#nav3-tab').on('click', function (e) {
+                    //     e.preventDefault()
+                    //     $('#fam_dislike').hide();
+                    //     $('#tree').hide();
+                    //     $('#channels').show();
+                    //     console.log("switch graph");
+                    // });
+                </script>
+            </nav>
+            
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane text_wrap fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
+                    <h1 class="ml2 title" id="title1">Tag Wordcloud</h1> 
+                    <p class="ml2" id="content1">
+                        This is a wordcloud of tags.
+                    </p>
+                </div>
+                
+                <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
+                    <h1 class="ml2 title" id="title2">Title Wordcloud</h1>
+                    <p class="ml2" id="content2">
+                        This is a wordcloud of titles.
+                    </p>
+                </div>
+
+                <!-- <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
+                    <h1 class="ml2 title" id="title3">Likes by Channels</h1>
+                    <p class="ml2" id="content3">Likes by Channels</p>
+                </div> -->
+                <script>
+                    var title1 = document.querySelector('#title1');
+                    title1.innerHTML = title1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+                    var title2 = document.querySelector('#title2');
+                    title2.innerHTML = title2.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                    
+                    // var title3 = document.querySelector('#title3');
+                    // title3.innerHTML = title3.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="../js/animate.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    
+</body>
+</html>
