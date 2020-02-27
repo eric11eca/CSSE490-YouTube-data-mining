@@ -54,24 +54,8 @@
 
         <div class="shadow", style="float: right; width: 850px; height: 650px; margin-right: 2em; margin-top: 4em; margin-bottom: 2em;">
 
-            <div id="fam_dislike" style="height: 600px; width: 800px;">    
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    
-                <div id="93782725-2ecf-4c40-b30c-3e6218ae84d7" class="plotly-graph-div" style="height:600px; width:800px;"></div>
-                <script type="text/javascript" src="./assets/js/fam_dislike.js"></script>
-            </div>
-
-            <div id="tree" class="hidden" style="height: 600px; width: 800px;">
-                <image style="height: 300px; width: 800px; margin-top: 7em;" src="./assets/figures/tree.png"></image>
-            </div>
-
-            <div id="bubble_chart" class="hidden" style="height: 600px; width: 800px;">    
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        
-                <div id="04e2e5a2-0ef2-4089-8e29-b668b176840b" class="plotly-graph-div" style="height:600px; width:800px; text-align: center;"></div>
-                <script type="text/javascript" src="./assets/js/likes_dislikes.js"></script>
+            <div id="fam_dislike" style="height: 30%; width: 50%;">    
+                <image style="height: 350px; width: 650px; margin-top: 7em; margin-left: 7em;" src="./assets/figures/tagcloud.png"></image>
             </div>
 
         </div>
@@ -80,11 +64,8 @@
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <a class="nav-item nav-link active" id="nav1-tab" data-toggle="tab" href="#nav1" 
-                   role="tab" aria-controls="nav1" aria-selected="true">Disliked</a>
-                  <a class="nav-item nav-link" id="nav2-tab" data-toggle="tab" href="#nav2" 
-                   role="tab" aria-controls="nav2" aria-selected="false">Likes</a>
-                  <a class="nav-item nav-link" id="nav3-tab" data-toggle="tab" href="#nav3" 
-                   role="tab" aria-controls="nav3" aria-selected="false">Likes vs. Dislikes</a>
+                   role="tab" aria-controls="nav1" aria-selected="true">Tag cloud</a>
+                  
                 </div>
                 <script>
                     $('#nav1-tab').on('click', function (e) {
@@ -115,38 +96,12 @@
             
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane text_wrap fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
-                    <h1 class="ml2 title" id="title1">Famous By Disliked</h1> 
-                    <p class="ml2" id="content1">There is no such a thing as bad, 
-                        a video can acutally gain polularity by being disliked. 
-                        The chart on the right selected the top 10 videos
-                        with highest counts of dislikes. As the the chart shows, most of the 
-                        disliked videos actually have a really high counts of likes also. 
-                        In real life, different people have different ideas towards a topic, 
-                        sometimes, a video can be both liked and disliked by a large number of people. 
-                        Without an absolute standard, we can't accurately categorize the video as a liked video 
-                        or as a disliked video. 
+                    <h1 class="ml2 title" id="title1">Tag Cloud</h1> 
+                    <p class="ml2" id="content1">
+                        Word cloud for tags of all the videos. 
                     </p>
                 </div>
-                
-                <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
-                    <h1 class="ml2 title" id="title2">Predict Rating(likes) by Decision Tree</h1>
-                    <p class="ml2" id="content2">
-                        This is a decision tree classifier to predict the rating (likes) of the videos 
-                        according to the comment counts, views, and categories. The results showed that when comment counts are low, 
-                        the higher the view the better the rating. When comment counts are high, 
-                        the category "music" and "entertainment" win more likes. 
-                        The results is also validated by a random forest classifier which do a ensemble learning 
-                        on multiple decision trees for selecting the optimal decision tree. 
-                        The result is the same as the original decision tree.
-                    </p>
-                </div>
-
-                <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
-                    <h1 class="ml2 title" id="title3">Bubble Chart</h1>
-                    <p class="ml2" id="content3">
-                        Bubble Chart shows a direct comparison of each category's number of likes and numnber of dislikes.
-                    </p>
-                </div>
+            
                 <script>
                     var title1 = document.querySelector('#title1');
                     title1.innerHTML = title1.textContent.replace(/\S/g, "<span class='letter'>$&</span>");

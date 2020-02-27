@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/animate.css">
-    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
     
     <style>
         body {
@@ -43,7 +43,7 @@
     <header class="header-basic-light">
         <div class="header-limiter">
             <h1>
-                <a href="./GBVideo.html">Trending YouTube Video Data Mining: Time Analysis  
+                <a href="./GBVideo.html">Trending YouTube Video Data Mining: Likes vs. Dislikes  
                     <img src="./assets/Data.svg" width="40" height="40" style="text-align: center;">
                 </a>
             </h1>
@@ -54,24 +54,16 @@
 
         <div class="shadow", style="float: right; width: 850px; height: 650px; margin-right: 2em; margin-top: 4em; margin-bottom: 2em;">
 
-            <div id="late_bloomer" style="height: 600px; width: 800px;">    
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    
-                <div id="ae851871-5d4f-4093-b507-39a5b05d06ce" class="plotly-graph-div" style="height:600px; width:800px;"></div>
-                <script type="text/javascript" src="./assets/js/late_bloomer.js"></script>
-            </div>
-    
-            <div id="heatmap" class="hidden">
-                <image class="img" src="./assets/figures/video_12h.jpeg"></image>
+            <div id="fam_dislike" style="height: 30%; width: 50%;">    
+                <image style="height: 350px; width: 650px; margin-top: 7em; margin-left: 7em;" src="./assets/figures/data_description.png"></image>
             </div>
 
-            <div id="trendingtime" class="hidden" style="height: 600px; width: 800px;">    
-                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-                <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <div id="tree" class="hidden" style="height: 600px; width: 800px;">
+                <image style="height: 250px; width: 600px; margin-top: 7em; margin-left: 7em;" src="./assets/figures/numerical_description.png"></image>
+            </div>
 
-                <div id="e1d0a143-c693-44e1-afd2-2642182d9248" class="plotly-graph-div" style="height:600px; width:800px; text-align: center;"></div>
-                <script type="text/javascript" src="./assets/js/trendingtime.js"></script>
+            <div id="bubble_chart" class="hidden" style="height: 600px; width: 800px;">    
+                <image style="height: 500px; width: 800px; margin-top: 4em;" src="./assets/figures/count_category.png"></image>
             </div>
 
         </div>
@@ -80,34 +72,34 @@
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                   <a class="nav-item nav-link active" id="nav1-tab" data-toggle="tab" href="#nav1" 
-                  role="tab" aria-controls="nav1" aria-selected="true">Late Bloomer</a>
+                   role="tab" aria-controls="nav1" aria-selected="true">Full Data</a>
                   <a class="nav-item nav-link" id="nav2-tab" data-toggle="tab" href="#nav2" 
-                  role="tab" aria-controls="nav2" aria-selected="false">Publishing24h</a>
+                   role="tab" aria-controls="nav2" aria-selected="false">Numerical Attributes</a>
                   <a class="nav-item nav-link" id="nav3-tab" data-toggle="tab" href="#nav3" 
-                  role="tab" aria-controls="nav3" aria-selected="false">TrendingTime</a>
+                   role="tab" aria-controls="nav3" aria-selected="false">Category Count</a>
                 </div>
                 <script>
                     $('#nav1-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#late_bloomer').show();
-                        $('#heatmap').hide();
-                        $('#trendingtime').hide();
+                        $('#fam_dislike').show();
+                        $('#tree').hide();
+                        $('#bubble_chart').hide();
                         console.log("switch graph");
                     });
 
                     $('#nav2-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#late_bloomer').hide();
-                        $('#heatmap').show();
-                        $('#trendingtime').hide();
+                        $('#fam_dislike').hide();
+                        $('#tree').show();
+                        $('#bubble_chart').hide();
                         console.log("switch graph");
                     });
 
                     $('#nav3-tab').on('click', function (e) {
                         e.preventDefault()
-                        $('#late_bloomer').hide();
-                        $('#heatmap').hide();
-                        $('#trendingtime').show();
+                        $('#fam_dislike').hide();
+                        $('#tree').hide();
+                        $('#bubble_chart').show();
                         console.log("switch graph");
                     });
                 </script>
@@ -115,38 +107,22 @@
             
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane text_wrap fade show active" id="nav1" role="tabpanel" aria-labelledby="nav1-tab">
-                    <h1 class="ml2 title" id="title1">Late Bloomer</h1> 
+                    <h1 class="ml2 title" id="title1">Full Data Description</h1> 
                     <p class="ml2" id="content1">
-                        Not all videos became trending once they were published. Sometimes, 
-                        a trending video takes time for people to get familiar with and accept.
-                        The bar chart on the right shows a list of the videos that waited for the longest before they became trending. 
-                        Many different types of interesting video waited for a while until they become trending. 
-                        It proves that the best is sometimes yet to come. 
+                        Table of numerical description of the entire data set.
                     </p>
                 </div>
                 
                 <div class="tab-pane fade" id="nav2" role="tabpanel" aria-labelledby="nav2-tab">
-                    <h1 class="ml2 title" id="title2">24h GBVideos HeatMap</h1>
+                    <h1 class="ml2 title" id="title2">Numerical Attributes Description</h1>
                     <p class="ml2" id="content2">
-                        I explored the number of videos published in different hours throughout 
-                        the day by count the video id grouped by published hours. 
-                        I then created a heat map to visualize the result. 
-                        From the heat map, I can see that many people 
-                        in England tend to publish Music videos and entertainment videos in the afternoon. 
-                        Most people don't publish videos after midnight.
+                        Table of numerical description of the four numerical attributes.
                     </p>
                 </div>
 
                 <div class="tab-pane fade" id="nav3" role="tabpanel" aria-labelledby="nav3-tab">
-                    <h1 class="ml2 title" id="title3">Trending Time Flow</h1>
-                    <p class="ml2" id="content3">
-                        Most of the trending videos in the dataset became trending during the year of 2018. 
-                        In both 2017 and 2018, the majority of the trending videos still belong to the categories of music and entertainment, 
-                        just like the overall number of videos per category. 
-                        However, we can see in every month, every category is evenly distributed. 
-                        The videos each month dose not significantly centered at one or two categories. 
-                        Interestingly, Saturday is the day that has the most number of videos became trending. 
-                        Perhaps, people watch youtube more often on a Saturday. </p>
+                    <h1 class="ml2 title" id="title3">Category Count Box Plot</h1>
+                    <p class="ml2" id="content3">Bubble Chart shows that</p>
                 </div>
                 <script>
                     var title1 = document.querySelector('#title1');
